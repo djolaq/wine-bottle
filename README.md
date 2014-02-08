@@ -1,6 +1,4 @@
 wine-bottle
 ===========
 
-Python with Bottle Web Framework project
-
-Manage your bottles of wine
+Python with Bottle Web Framework project : manage your bottles of wine
