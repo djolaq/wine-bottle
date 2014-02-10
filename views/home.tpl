@@ -18,6 +18,7 @@
             }
         </style>
         <link rel="stylesheet" href="bootstrap-theme.min.css">
+        <link rel="stylesheet" href="icomoon.css">
         <link rel="stylesheet" href="main.css">
 
         <script src="vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -70,8 +71,8 @@
 	        			<label for="year">Year</label>
 	        			<input type="text" name="year" id="year" class="form-control" placeholder="year, exemple : 1989"/>
 	        		</div>
-	        		<button type="button" class="btn btn-default" id="buttonSubmitNewBottle">
-	        			<span class="glyphicon glyphicon-plus"></span> Add bottle
+	        		<button type="button" class="btn btn-primary" id="buttonSubmitNewBottle">
+	        			<span class="icon-plus"></span> Add bottle
 	        		</button>
 	        	</form>
 	       	</div>
