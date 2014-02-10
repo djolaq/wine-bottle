@@ -23,6 +23,11 @@ brew install mongodb
 pip install bottle
 ```
 
+### And Pymongo to interect with MongoDB
+```sh
+pip install pymongo
+```
+
 Installation
 ------------
 
@@ -31,4 +36,4 @@ Clone from github, and just tape this magic word :
 python index.py
 ```
 
-Then go on : [http://localhost:8082](http://localhost:8082)
+Then go on : [http://localhost:8080](http://localhost:8080)
