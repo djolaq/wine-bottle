@@ -10,17 +10,17 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap.min.css">
         <style>
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
         </style>
-        <link rel="stylesheet" href="/public/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="/public/css/main.css">
+        <link rel="stylesheet" href="bootstrap-theme.min.css">
+        <link rel="stylesheet" href="main.css">
 
-        <script src="/public/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -86,11 +86,11 @@
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/public/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
-    <script src="/public/js/vendor/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap.min.js"></script>
 
-    <script src="/public/js/main.js"></script>
+    <script src="main.js"></script>
 
     <script>
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
