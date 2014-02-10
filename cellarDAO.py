@@ -18,4 +18,4 @@ class CellarDAO(object):
 	#Add new bottle of wine in cellar
 	def insert_bottle(self, name, color, year):
 		newbottle = {'name':name, 'color':color, 'year':year}
-		self.bottle.insert(newbottle)
+		self.bottles.insert(newbottle)
