@@ -1,4 +1,3 @@
-import bottle 
 import pymongo
 import cellarDAO
 
@@ -8,7 +7,7 @@ from bottle import route, run, template, request, redirect
 @route('/')
 def wine_index():
 	bottle_list = cellar.find_bottles()
-	return template('index', dict(bottles = bottle_list))
+	return template('home', dict(bottles = bottle_list))
 
 #Post new bottle of wine
 @route('/bottle/new', method="POST")
@@ -30,7 +29,4 @@ database = connection.bottles
 
 cellar = cellarDAO.CellarDAO(database)
 
-bottle.debug(true)
-
-run(host='localhost', port=8082)
-
+run(host='localhost', port=8080, debug=True)
