@@ -43,9 +43,9 @@
 	          	<tbody>
 	          	% for bottle in bottles:
 	          		<tr>
-	          			<td>{{bottle.name}}</td>
-	          			<td>{{bottle.color}}</td>
-	          			<td>{{bottle.year}}</td>
+	          			<td>{{bottle['name']}}</td>
+	          			<td>{{bottle['color']}}</td>
+	          			<td>{{bottle['year']}}</td>
 	          		</tr>
 	          	% end
 	          	</tbody>
@@ -53,24 +53,24 @@
 	        </div>
 	        <div class="col-lg-4">
 	          	<h2>Add bottle</h2>
-	        	<form role="form">
+	        	<form id="formAddBottle" role="form" method="POST" action="/bottle/new">
 	        		<div class="form-group">
 	        			<label for="name">Name</label>
 	        			<input type="text" name="name" id="name" class="form-control" placeholder="name of bottle"/>
 	        		</div>
 	        		<div class="form-group">
 	        			<label for="color">Color</label>
-	        			<select class="form-control">
+	        			<select class="form-control" id="color" name="color">
 	        				<option>red</option>
 	        				<option>white</option>
 	        				<option>rose</option>
 	        			</select>
 	        		</div>
 	        		<div class="form-group">
-	        			<label for="date">Year</label>
-	        			<input type="date" name="date" id="date" class="form-control"/>
+	        			<label for="year">Year</label>
+	        			<input type="text" name="year" id="year" class="form-control" placeholder="year, exemple : 1989"/>
 	        		</div>
-	        		<button type="button" class="btn btn-default">
+	        		<button type="button" class="btn btn-default" id="buttonSubmitNewBottle">
 	        			<span class="glyphicon glyphicon-plus"></span> Add bottle
 	        		</button>
 	        	</form>
