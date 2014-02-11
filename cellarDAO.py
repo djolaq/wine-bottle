@@ -1,17 +1,25 @@
+import pymongo
 import string
+
+from bson.objectid import ObjectId
 
 class CellarDAO(object):
 
+	connection_address = "mongodb://localhost"
+
 	#Init class with mongo database
-	def __init__(self, database):
-			self.db = database
-			self.bottles = database.bottles
+	def __init__(self):
+		#Connection setup
+		connection = pymongo.MongoClient(self.connection_address)
+
+		self.db = connection.bottles
+		self.bottles = self.db.bottles
 
 	#Get all bottles in cellar 
 	def find_bottles(self):
 		current_bottles = []
 		for bottle in self.bottles.find():
-			current_bottles.append({'name':bottle['name'], 'color':bottle['color'], 'year':bottle['year']})
+			current_bottles.append({'id':bottle['_id'], 'name':bottle['name'], 'color':bottle['color'], 'year':bottle['year']})
 
 		return current_bottles
 
@@ -19,3 +27,11 @@ class CellarDAO(object):
 	def insert_bottle(self, name, color, year):
 		newbottle = {'name':name, 'color':color, 'year':year}
 		self.bottles.insert(newbottle)
+
+	#Delete a bottle
+	def delete_bottle(self, id):
+		if self.bottles.find_one({'_id':ObjectId(id)}):
+			self.bottles.remove({'_id':ObjectId(id)})
+			return True
+		else:
+			return False

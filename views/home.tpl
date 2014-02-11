@@ -32,7 +32,7 @@
     <div class="container">
      	<div class="row">
 	        <div class="col-lg-8">
-	        	<h2>All my bottles of wine</h2>
+	        	<h2>Cellar</h2>
 	          	<table class="table table-striped table-hover">
 	          	<thead>
 	          		<tr>
@@ -47,6 +47,11 @@
 	          			<td>{{bottle['name']}}</td>
 	          			<td>{{bottle['color']}}</td>
 	          			<td>{{bottle['year']}}</td>
+	          			<td>
+	          				<button type="button" class="btn btn-link btn-xs classbuttonDeleteBottle buttonDeleteBottle_{{bottle['id']}}" id="buttonDeleteBottle_{{bottle['id']}}">
+	          					<span class="icon-remove"></span> Delete
+	          				</button>
+	          			</td>
 	          		</tr>
 	          	% end
 	          	</tbody>
@@ -57,7 +62,7 @@
 	        	<form id="formAddBottle" role="form" method="POST" action="/bottle/new">
 	        		<div class="form-group">
 	        			<label for="name">Name</label>
-	        			<input type="text" name="name" id="name" class="form-control" placeholder="name of bottle"/>
+	        			<input type="text" name="name" id="name" class="form-control" minlength="2" placeholder="name of bottle" required/>
 	        		</div>
 	        		<div class="form-group">
 	        			<label for="color">Color</label>
@@ -69,7 +74,7 @@
 	        		</div>
 	        		<div class="form-group">
 	        			<label for="year">Year</label>
-	        			<input type="text" name="year" id="year" class="form-control" placeholder="year, exemple : 1989"/>
+	        			<input type="text" name="year" id="year" class="form-control" minlength="4" placeholder="year, exemple : 1989" required/>
 	        		</div>
 	        		<button type="button" class="btn btn-primary" id="buttonSubmitNewBottle">
 	        			<span class="icon-plus"></span> Add bottle
@@ -90,6 +95,8 @@
     <script>window.jQuery || document.write('<script src="vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
     <script src="vendor/bootstrap.min.js"></script>
+    <script src="vendor/jquery.validate.min.js"></script>
+    <script src="vendor/bootstrap-growl.min.js"></script>
 
     <script src="main.js"></script>
 

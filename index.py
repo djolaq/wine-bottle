@@ -1,7 +1,6 @@
-import pymongo
 import cellarDAO
 
-from bottle import route, run, template, request, redirect, static_file, error, get
+from bottle import route, run, template, request, redirect, static_file, error, get, post, response
 
 # Static Routes
 @get('/<filename:re:.*\.js>')
@@ -22,7 +21,7 @@ def fonts(filename):
 
 @error(404)
 def error404(error):
-	return 'Please dont stay here !'
+	return template('error/404')
 
 
 #route index, we will show all our bottle of wine
@@ -42,13 +41,17 @@ def add_bottle():
 
 	redirect('/')
 
-#Connection setup
-connection_address = "mongodb://localhost"
+@post('/bottle/delete')
+def delete_bottle():
+	id_bottle = request.POST['id']
 
-connection = pymongo.MongoClient(connection_address)
+	if cellar.delete_bottle(id_bottle):
+		#success OK
+		response.status = 200
+	else:
+		#error
+		response.status = 500
 
-database = connection.bottles
-
-cellar = cellarDAO.CellarDAO(database)
+cellar = cellarDAO.CellarDAO()
 
 run(host='localhost', port=8080, debug=True)
