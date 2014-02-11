@@ -3,7 +3,9 @@ wine-bottle
 
 Manage your bottles of wine
 
-This project use Python, Bottle and MongoDB
+This project use =
+:star2: **Back-end : Python, Bottle and MongoDB (with Pymongo)**
+:star2: **Front-end : Twitter Bootstrap, HTML5 Boilerplate, JQuery and IcoMoon**
 
 This is a fun small project just to test some new cool web stuff
 
