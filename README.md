@@ -32,6 +32,11 @@ pip install bottle
 pip install pymongo
 ```
 
+### And Jinja2 for templating
+```sh
+pip install Jinja2
+```
+
 Installation
 ------------
 
