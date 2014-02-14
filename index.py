@@ -1,7 +1,6 @@
 import cellarDAO
 
 from bottle import route, run, template, request, redirect, static_file, error, get, post, response
-#from jinja2 import Environment, PackageLoader
 from bottle import jinja2_view as view, jinja2_template as template
 
 # Static Routes
