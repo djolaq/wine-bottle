@@ -27,7 +27,7 @@ brew install mongodb
 pip install bottle
 ```
 
-### And Pymongo to interect with MongoDB
+### And Pymongo to interact with MongoDB
 ```sh
 pip install pymongo
 ```
