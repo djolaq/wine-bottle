@@ -40,6 +40,11 @@ pip install Jinja2
 Installation
 ------------
 
+Start MongoDB first
+```sh
+mongod
+```
+
 Clone from github, and just tape this magic word :
 ```sh
 python index.py
