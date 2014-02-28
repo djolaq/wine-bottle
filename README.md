@@ -3,8 +3,10 @@ wine-bottle
 
 Manage your bottles of wine
 
-This project use =
+This project use : 
+
 :star2: **Back-end : Python, Bottle and MongoDB (with Pymongo)**
+
 :star2: **Front-end : Twitter Bootstrap, HTML5 Boilerplate, JQuery and IcoMoon**
 
 This is a fun small project just to test some new cool web stuff
@@ -25,9 +27,14 @@ brew install mongodb
 pip install bottle
 ```
 
-### And Pymongo to interect with MongoDB
+### And Pymongo to interact with MongoDB
 ```sh
 pip install pymongo
+```
+
+### And Jinja2 for templating
+```sh
+pip install Jinja2
 ```
 
 ### And Pycountry to import countries in the program
@@ -37,6 +44,11 @@ pip install pycountry
 
 Installation
 ------------
+
+Start MongoDB first
+```sh
+mongod
+```
 
 Clone from github, and just tape this magic word :
 ```sh
