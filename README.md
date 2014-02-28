@@ -35,6 +35,10 @@ pip install pymongo
 ### And Jinja2 for templating
 ```sh
 pip install Jinja2
+
+### And Pycountry to import countries in the program
+```sh
+pip install pycountry
 ```
 
 Installation
