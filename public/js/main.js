@@ -6,6 +6,7 @@ $(function(){
 		exprYear : new RegExp("^[12][0-9]{3}$"),
 
 		init:function(){
+			this.initSelectCountries();
 			this.initAllButtons();
 		},
 
@@ -16,6 +17,14 @@ $(function(){
 			$('.classbuttonDeleteBottle').click(function(event){
 				this.removeBottle(event);
 			}.bind(this));
+		},
+
+		/**
+		* this function will call a rest api to get all countries, and
+		* update the select in the page
+		*/
+		initSelectCountries : function(){
+			$("#country").select2();
 		},
 
 		checkYear : function(){

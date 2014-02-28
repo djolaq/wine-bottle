@@ -11,6 +11,7 @@
 	          			<td>Name</td>
 	          			<td>Color</td>
 	          			<td>Year</td>
+	          			<td>Country</td>
 	          		</tr>
 	          	</thead>
 	          	<tbody>
@@ -19,6 +20,7 @@
 	          			<td>{{bottle['name']}}</td>
 	          			<td>{{bottle['color']}}</td>
 	          			<td>{{bottle['year']}}</td>
+	          			<td>{{bottle['country']}}</td>
 	          			<td>
 	          				<button type="button" class="btn btn-link btn-xs classbuttonDeleteBottle buttonDeleteBottle_{{bottle['id']}}" id="buttonDeleteBottle_{{bottle['id']}}">
 	          					<span class="icon-remove"></span> Delete
@@ -47,6 +49,18 @@
 	        		<div class="form-group">
 	        			<label for="year">Year</label>
 	        			<input type="text" name="year" id="year" class="form-control" minlength="4" placeholder="year, exemple : 1989" required/>
+	        		</div>
+	        		<div class="form-group">
+	        			<label for="country">Country</label>
+	        			<select class="form-control" name="country" id="country">
+	        				{% for country in countries %}
+	        					{% if country['name'] == 'France' %}
+	        						<option value="{{country['name']}}" selected="selected">{{country['name']}}</option>
+	        					{% else %}
+									<option value="{{country['name']}}">{{country['name']}}</option>
+	        					{% endif %}
+	        				{% endfor %}
+	        			</select>
 	        		</div>
 	        		<button type="button" class="btn btn-primary" id="buttonSubmitNewBottle">
 	        			<span class="icon-plus"></span> Add bottle

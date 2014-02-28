@@ -30,6 +30,11 @@ pip install bottle
 pip install pymongo
 ```
 
+### And Pycountry to import countries in the program
+```sh
+pip install pycountry
+```
+
 Installation
 ------------
 

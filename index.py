@@ -1,7 +1,7 @@
 import cellarDAO
+import pycountry
 
 from bottle import route, run, template, request, redirect, static_file, error, get, post, response
-#from jinja2 import Environment, PackageLoader
 from bottle import jinja2_view as view, jinja2_template as template
 
 # Static Routes
@@ -29,8 +29,18 @@ def error404(error):
 #route index, we will show all our bottle of wine
 @route('/')
 def wine_index():
+	current_countries = []
 	bottle_list = cellar.find_bottles()
-	return template('home', dict(bottles = bottle_list))
+	for ct in pycountry.countries:	
+		current_countries.append({
+			'name':ct.name
+		})
+
+	return template('home', dict(bottles = bottle_list, countries = current_countries))
+
+@route('/about')
+def about_page():
+	return template('about')
 
 #Post new bottle of wine
 @route('/bottle/new', method="POST")
@@ -38,8 +48,9 @@ def add_bottle():
 	name = request.forms.get('name')
 	color = request.forms.get('color')
 	year = request.forms.get('year')
+	country = request.forms.get('country')
 
-	cellar.insert_bottle(name, color, year)
+	cellar.insert_bottle(name, color, year, country)
 
 	redirect('/')
 
