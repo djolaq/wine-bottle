@@ -19,13 +19,19 @@ class CellarDAO(object):
 	def find_bottles(self):
 		current_bottles = []
 		for bottle in self.bottles.find():
-			current_bottles.append({'id':bottle['_id'], 'name':bottle['name'], 'color':bottle['color'], 'year':bottle['year']})
+			current_bottles.append({
+				'id':bottle['_id'], 
+				'name':bottle['name'], 
+				'color':bottle['color'], 
+				'year':bottle['year'],
+				'country':bottle['country']
+			})
 
 		return current_bottles
 
 	#Add new bottle of wine in cellar
-	def insert_bottle(self, name, color, year):
-		newbottle = {'name':name, 'color':color, 'year':year}
+	def insert_bottle(self, name, color, year, country):
+		newbottle = {'name':name, 'color':color, 'year':year, 'country':country}
 		self.bottles.insert(newbottle)
 
 	#Delete a bottle
